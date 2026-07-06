@@ -1,0 +1,79 @@
+PLATAFORMA DEL ALUMNO — QI GONG DE LOS CAMBIOS
+================================================
+
+ESTRUCTURA DE CARPETAS
+-----------------------
+index.html          -> la web (login + panel del alumno)
+css/style.css       -> estilos, con el mismo aire visual que iching-qigong.com
+js/course-data.js   -> contenido de los 4 modulos (edítalo para tus PDFs/videos)
+js/auth-data.js     -> usuarios y contraseñas de alumnos (modo local)
+js/main.js          -> la logica de la web (no hace falta tocarlo)
+img/                -> favicon y elementos graficos
+docs/moduloX/       -> aqui van tus archivos reales:
+    teoria/           PDF de teoria
+    practica-videos/  videos de las clases
+    streaming/        notas sobre las sesiones en directo
+    test/             test de repaso de cada modulo
+
+COMO VERLO EN LOCAL
+-----------------------
+Al ser una web con "modulos" en JavaScript, algunos navegadores bloquean
+la carga de archivos si simplemente haces doble-click en index.html
+(por seguridad, restringen el acceso a file://). Lo mas sencillo:
+
+1. Si tienes Python instalado, abre una terminal en esta carpeta y escribe:
+     python3 -m http.server 8000
+   Luego abre en el navegador: http://localhost:8000
+
+2. O instala la extension "Live Server" en Visual Studio Code y pulsa
+   "Go Live" con index.html abierto.
+
+ACCESO DE PRUEBA
+-----------------------
+Usuario:      alumno
+Contraseña:   iching2026
+
+Para añadir a tus alumnos reales, abre js/auth-data.js y añade una linea
+por cada alumno, con su usuario y una contraseña temporal.
+
+IMPORTANTE SOBRE LA SEGURIDAD DEL LOGIN
+-----------------------
+El acceso que ves ahora es solo una comprobacion hecha en el navegador
+(JavaScript). Es util como "puerta" mientras construyes el curso en local,
+pero cualquiera que abra el archivo js/auth-data.js con un editor de texto
+podria ver las contraseñas. NO es una autenticacion segura.
+
+Cuando subas la web a un servidor de verdad y quieras dar acceso a tus
+alumnos con garantias, sustituye este sistema por uno de estos:
+  - Un backend sencillo (PHP, Node.js, Python) que compruebe usuario y
+    contraseña en el servidor, no en el navegador.
+  - Un sistema de "miembros" ya hecho: Wix Members, Netlify Identity,
+    Firebase Authentication, Memberstack, etc.
+
+AÑADIR TUS PDFs, VIDEOS Y SESIONES EN DIRECTO
+-----------------------
+1. Copia tus archivos dentro de docs/moduloX/teoria, practica-videos, test.
+2. Abre js/course-data.js y cambia las rutas "file" para que apunten a tus
+   archivos (o pega una URL de YouTube/Vimeo/Google Drive si el archivo
+   es muy pesado para guardarlo aqui).
+3. Para la sesion en directo, pega el enlace de Zoom/Meet/YouTube Live en
+   el campo streaming.url de cada modulo.
+
+CAMBIAR EL LOGO
+-----------------------
+Ahora mismo la marca se muestra con un sello circular y un caracter chino
+(易 / 卦), en el mismo estilo que el sello rojo de la web original. Si
+quieres poner tu logo real:
+1. Guarda tu archivo de logo (PNG o SVG) dentro de la carpeta img/,
+   por ejemplo como img/logo.png.
+2. En index.html, sustituye:
+     <div class="seal" aria-hidden="true">易</div>
+   por:
+     <img src="img/logo.png" alt="I Ching Qi Gong" style="width:44px;height:44px;border-radius:50%;">
+
+SUBIR LA WEB A UN SERVIDOR
+-----------------------
+Cuando quieras publicarla, sube toda esta carpeta (index.html, css/, js/,
+img/, docs/) tal cual a tu hosting. Si tu hosting no soporta un backend
+propio, servicios como Netlify o Vercel permiten anadir despues un login
+real facilmente.
