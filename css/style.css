@@ -21,9 +21,9 @@
   --ink:          #2B2733;
   --ink-soft:     #6a6476;
 
-  --font-display: 'Baloo 2', 'Quicksand', sans-serif;
-  --font-script:  'Baloo 2', 'Quicksand', sans-serif;
-  --font-body:    'Quicksand', 'Segoe UI', sans-serif;
+  --font-display: 'Familjen Grotesk', 'Poppins', sans-serif;
+  --font-script:  'Familjen Grotesk', 'Poppins', sans-serif;
+  --font-body:    'Poppins', 'Segoe UI', sans-serif;
 
   --radius:     14px;   /* mas redondeado, a peticion */
   --radius-sm:  10px;
