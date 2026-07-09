@@ -1,31 +1,34 @@
 /* =========================================================
    QI GONG DE LOS CAMBIOS — Plataforma del alumno
-   Paleta e identidad inspiradas en iching-qigong.com
+   Paleta oficial de la marca (paleta_de_colores_Amando_Lavida)
    ========================================================= */
 
 :root{
-  --sage:        #dfe9df;   /* barra superior, verde salvia */
-  --sage-dark:   #b9cdb9;
-  --wood-1:      #8a6a45;   /* franja madera del hero */
-  --wood-2:      #5f4630;
-  --lavender:    #e9e1f2;   /* fondo del contenido, lila suave */
-  --lavender-2:  #f3eef8;
-  --teal:        #2f7f7a;   /* acentos, script, enlaces */
-  --teal-dark:   #1f5c58;
-  --forest:      #3f6b4f;   /* botones principales */
-  --forest-dark: #2c4d38;
-  --seal:        #ab3b34;   /* rojo del sello */
-  --ink:         #33302b;
-  --ink-soft:    #5b5750;
-  --paper:       #fffdf9;
-  --gold:        #b8965a;
+  --violeta:      #9A51FF;   /* violeta ligero — color de marca principal */
+  --violeta-dark: #7a2fe0;
+  --amarillo:     #FFE051;   /* amarillo / naranja brillante */
+  --naranja:      #FFA500;   /* naranja fuerte */
+  --cian:         #17E0FF;   /* cian vivido */
+  --verde:        #51FFA8;   /* verde ligero */
+  --tao-red:      #FB5732;   /* rojo-naranja, letras del Tao */
+  --gold:         #A98F38;   /* fondo oro */
+  --gold-light:   #DEBC42;   /* aerosol dorado */
+
+  --bg:           #FBF8FF;   /* fondo general, violeta muy diluido */
+  --paper:        #FFFFFF;
+  --panel-tint:   #F5F0FF;
+
+  --ink:          #2B2733;
+  --ink-soft:     #6a6476;
 
   --font-display: 'Cormorant Garamond', 'Noto Serif', serif;
   --font-script:  'Yuji Syuku', 'Cormorant Garamond', serif;
   --font-body:    'Karla', 'Segoe UI', sans-serif;
 
-  --radius: 6px;
-  --shadow: 0 6px 18px rgba(51, 40, 20, 0.14);
+  --radius:     14px;   /* mas redondeado, a peticion */
+  --radius-sm:  10px;
+  --radius-pill: 999px;
+  --shadow: 0 8px 22px rgba(122, 47, 224, 0.14);
 }
 
 *{ box-sizing:border-box; }
@@ -33,18 +36,18 @@ html,body{ margin:0; padding:0; }
 body{
   font-family: var(--font-body);
   color: var(--ink);
-  background: var(--lavender);
+  background: var(--bg);
   min-height: 100vh;
 }
 img{ max-width:100%; display:block; }
-a{ color: var(--teal-dark); }
+a{ color: var(--violeta-dark); }
 button{ font-family: inherit; cursor:pointer; }
 .hidden{ display:none !important; }
 
 /* ---------- Barra superior ---------- */
 .top-bar{
-  background: var(--sage);
-  border-bottom: 1px solid var(--sage-dark);
+  background: var(--paper);
+  border-bottom: 3px solid var(--violeta);
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -57,20 +60,18 @@ button{ font-family: inherit; cursor:pointer; }
   align-items:center;
   gap:12px;
 }
-.brand .seal{
-  width:44px; height:44px;
-  border-radius:50%;
-  background: var(--paper);
-  border: 2px solid var(--seal);
-  display:flex; align-items:center; justify-content:center;
-  color: var(--seal);
-  font-family: var(--font-script);
-  font-size: 20px;
+.brand .seal-badge{
+  width:46px; height:46px;
+  border-radius: var(--radius-sm);
+  overflow:hidden;
+  border: 2px solid var(--tao-red);
   flex-shrink:0;
+  background:#fff;
 }
+.brand .seal-badge img{ width:100%; height:100%; object-fit:cover; }
 .brand-text .title-en{
   font-family: var(--font-script);
-  color: var(--teal-dark);
+  color: var(--violeta-dark);
   font-size: 0.85rem;
   letter-spacing: 0.5px;
   line-height:1;
@@ -87,21 +88,29 @@ button{ font-family: inherit; cursor:pointer; }
 }
 .top-bar-right .user-name{ color: var(--ink-soft); }
 .btn-link{
-  background:none; border:none; color:var(--teal-dark);
+  background:none; border:none; color:var(--violeta-dark);
   text-decoration:underline; font-size:0.92rem; padding:4px;
+  border-radius: var(--radius-sm);
 }
 
-/* ---------- Franja madera (hero) ---------- */
+/* ---------- Franja hero ---------- */
 .wood-band{
-  background:
-    repeating-linear-gradient(100deg,
-      rgba(0,0,0,0.05) 0px, rgba(0,0,0,0.05) 2px,
-      transparent 2px, transparent 26px),
-    linear-gradient(180deg, var(--wood-1), var(--wood-2));
+  background: linear-gradient(135deg, var(--violeta) 0%, #6f2fd6 55%, #4a1f9c 100%);
   color: var(--paper);
-  padding: 34px 28px;
+  padding: 30px 28px 34px;
   text-align:center;
+  position:relative;
 }
+.wood-band .hero-logo{
+  width: 92px; height: 92px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  overflow:hidden;
+  border: 3px solid var(--gold-light);
+  background:#fff;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+.wood-band .hero-logo img{ width:100%; height:100%; object-fit:cover; }
 .wood-band h1{
   font-family: var(--font-display);
   font-weight:600;
@@ -112,7 +121,7 @@ button{ font-family: inherit; cursor:pointer; }
 .wood-band p{
   margin:0;
   font-family: var(--font-script);
-  color: #f1e6cf;
+  color: var(--amarillo);
   font-size:1.05rem;
 }
 
@@ -126,23 +135,21 @@ button{ font-family: inherit; cursor:pointer; }
 }
 .login-card{
   background: var(--paper);
-  border-radius: var(--radius);
+  border-radius: 22px;
   box-shadow: var(--shadow);
   padding: 36px 34px;
   max-width: 380px;
   width:100%;
   text-align:center;
-  border-top: 4px solid var(--forest);
+  border-top: 5px solid var(--violeta);
 }
-.login-card .seal{
-  width:56px; height:56px; margin:0 auto 12px;
-  border-radius:50%;
-  border:2px solid var(--seal);
-  color:var(--seal);
-  display:flex;align-items:center;justify-content:center;
-  font-family: var(--font-script);
-  font-size:24px;
+.login-card .seal-badge{
+  width:60px; height:60px; margin:0 auto 14px;
+  border-radius: var(--radius-sm);
+  overflow:hidden;
+  border: 2px solid var(--tao-red);
 }
+.login-card .seal-badge img{ width:100%; height:100%; object-fit:cover; }
 .login-card h2{
   font-family: var(--font-display);
   margin: 0 0 4px;
@@ -150,7 +157,7 @@ button{ font-family: inherit; cursor:pointer; }
 }
 .login-card .sub{
   font-family: var(--font-script);
-  color: var(--teal-dark);
+  color: var(--violeta-dark);
   margin: 0 0 22px;
 }
 .field{
@@ -165,42 +172,43 @@ button{ font-family: inherit; cursor:pointer; }
 }
 .field input{
   width:100%;
-  padding:10px 12px;
-  border:1px solid #cfc6da;
-  border-radius:4px;
+  padding:11px 14px;
+  border:1px solid #dcd3ea;
+  border-radius: var(--radius-sm);
   font-size:0.95rem;
-  background: var(--lavender-2);
+  background: var(--panel-tint);
 }
 .field input:focus{
-  outline: 2px solid var(--teal);
+  outline: 2px solid var(--cian);
   outline-offset:1px;
 }
 .btn-primary{
   width:100%;
-  background: var(--forest);
+  background: var(--violeta);
   color:#fff;
   border:none;
-  padding: 11px 18px;
-  border-radius: 4px;
+  padding: 12px 18px;
+  border-radius: var(--radius-pill);
   font-size:1rem;
-  font-weight:600;
+  font-weight:700;
   letter-spacing:0.3px;
-  transition: background 0.15s ease;
+  transition: background 0.15s ease, transform 0.15s ease;
 }
-.btn-primary:hover{ background: var(--forest-dark); }
-.btn-primary:focus-visible{ outline:3px solid var(--teal); outline-offset:2px; }
+.btn-primary:hover{ background: var(--violeta-dark); transform: translateY(-1px); }
+.btn-primary:focus-visible{ outline:3px solid var(--cian); outline-offset:2px; }
 .login-error{
-  color: var(--seal);
+  color: var(--tao-red);
   font-size:0.85rem;
   min-height:1.2em;
   margin-top:10px;
+  font-weight:600;
 }
 .login-hint{
   margin-top:18px;
   font-size:0.78rem;
   color: var(--ink-soft);
-  background: var(--lavender-2);
-  border-radius:4px;
+  background: var(--panel-tint);
+  border-radius: var(--radius-sm);
   padding:10px 12px;
   text-align:left;
   line-height:1.5;
@@ -210,7 +218,7 @@ button{ font-family: inherit; cursor:pointer; }
 .dashboard{
   max-width: 1080px;
   margin: 0 auto;
-  padding: 30px 20px 70px;
+  padding: 30px 20px 50px;
 }
 .dashboard-intro{
   text-align:center;
@@ -224,7 +232,7 @@ button{ font-family: inherit; cursor:pointer; }
 }
 .dashboard-intro p{
   font-family: var(--font-script);
-  color: var(--teal-dark);
+  color: var(--violeta-dark);
   margin:0;
   font-size:1.05rem;
 }
@@ -242,22 +250,24 @@ button{ font-family: inherit; cursor:pointer; }
   max-width: 250px;
   background: var(--paper);
   border: 2px solid transparent;
-  border-radius: var(--radius);
+  border-radius: 20px;
   box-shadow: var(--shadow);
-  padding: 18px 14px 16px;
+  padding: 20px 16px 18px;
   text-align:center;
-  transition: transform 0.15s ease, border-color 0.15s ease;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  border-top: 5px solid var(--m-color, var(--violeta));
 }
-.module-btn:hover{ transform: translateY(-3px); }
-.module-btn:focus-visible{ outline:3px solid var(--teal); outline-offset:2px; }
+.module-btn:hover{ transform: translateY(-3px); box-shadow: 0 12px 26px rgba(122,47,224,0.18); }
+.module-btn:focus-visible{ outline:3px solid var(--cian); outline-offset:2px; }
 .module-btn.active{
-  border-color: var(--forest);
-  background: var(--lavender-2);
+  border-color: var(--m-color, var(--violeta));
+  background: var(--panel-tint);
 }
 .module-btn .hexagram{
   width: 46px;
   margin: 0 auto 10px;
   display:block;
+  color: var(--m-color, var(--violeta));
 }
 .module-btn .m-eyebrow{
   display:block;
@@ -286,10 +296,10 @@ button{ font-family: inherit; cursor:pointer; }
 /* Panel de contenido del modulo */
 .module-panel{
   background: var(--paper);
-  border-radius: var(--radius);
+  border-radius: 20px;
   box-shadow: var(--shadow);
   padding: 26px 28px 30px;
-  border-left: 5px solid var(--forest);
+  border-left: 6px solid var(--m-color, var(--violeta));
   animation: reveal 0.25s ease;
 }
 @keyframes reveal{
@@ -304,7 +314,7 @@ button{ font-family: inherit; cursor:pointer; }
 }
 .module-panel .panel-sub{
   font-family: var(--font-script);
-  color: var(--teal-dark);
+  color: var(--violeta-dark);
   margin: 0 0 20px;
 }
 
@@ -314,15 +324,15 @@ button{ font-family: inherit; cursor:pointer; }
   gap: 18px;
 }
 .content-card{
-  background: var(--lavender-2);
-  border-radius: 5px;
+  background: var(--panel-tint);
+  border-radius: 16px;
   padding: 16px;
-  border: 1px solid #ddd2e8;
+  border: 1px solid #e6dcf5;
 }
 .content-card h4{
   margin:0 0 10px;
   font-size:0.95rem;
-  color: var(--forest-dark);
+  color: var(--violeta-dark);
   display:flex;
   align-items:center;
   gap:8px;
@@ -337,29 +347,30 @@ button{ font-family: inherit; cursor:pointer; }
   align-items:center;
   gap:8px;
   font-size:0.88rem;
-  padding: 7px 10px;
+  padding: 8px 12px;
   background: var(--paper);
-  border-radius:4px;
+  border-radius: var(--radius-sm);
   text-decoration:none;
   color: var(--ink);
-  border: 1px solid #e4dcee;
-  transition: border-color .15s ease;
+  border: 1px solid #e6dcf5;
+  transition: border-color .15s ease, transform .15s ease;
 }
 .content-card li a:hover, .content-card li .stream-link:hover{
-  border-color: var(--teal);
+  border-color: var(--cian);
+  transform: translateX(2px);
 }
 .tag{
   font-size:0.68rem;
   font-weight:700;
-  padding:2px 6px;
-  border-radius:3px;
+  padding:3px 8px;
+  border-radius: var(--radius-pill);
   text-transform:uppercase;
   letter-spacing:0.4px;
 }
-.tag.pdf{ background:#f1e0df; color:var(--seal); }
-.tag.video{ background:#dfeee6; color:var(--forest-dark); }
-.tag.live{ background:#fbe9c9; color:#8a6416; }
-.tag.test{ background:#dde6f2; color:#33517a; }
+.tag.pdf{ background:#ffe3db; color:#c2431f; }
+.tag.video{ background:#ddfaea; color:#0f8a52; }
+.tag.live{ background:#fff2cf; color:#8a6416; }
+.tag.test{ background:#e3f8ff; color:#0a7fa0; }
 
 .empty-note{
   font-size:0.82rem;
@@ -370,11 +381,23 @@ button{ font-family: inherit; cursor:pointer; }
 /* ---------- Pie ---------- */
 .site-footer{
   text-align:center;
-  padding: 22px 20px 40px;
+  padding: 10px 20px 40px;
   font-size:0.8rem;
   color: var(--ink-soft);
 }
-.site-footer strong{ color: var(--teal-dark); }
+.site-footer strong{ color: var(--violeta-dark); }
+.footer-venue{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin: 6px auto 14px;
+}
+.footer-venue img{
+  height: 30px;
+  width:auto;
+  border-radius: 6px;
+}
 
 /* ---------- Responsive ---------- */
 @media (max-width: 640px){

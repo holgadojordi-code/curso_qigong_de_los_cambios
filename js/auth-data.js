@@ -1,25 +1,23 @@
 /* ==========================================================================
    AUTH-DATA.JS
-   Lista de alumnos con acceso a la plataforma (modo demostración/local).
+   Acceso genérico para los alumnos de la plataforma.
+
+   Se usa un único usuario y contraseña compartidos por todos los alumnos,
+   sin guardar datos personales (nombres, teléfonos, emails) en este
+   archivo, ya que el repositorio de GitHub es público y cualquiera podría
+   leer este archivo con el navegador.
 
    IMPORTANTE — LÉEME:
-   Esto es una comprobación hecha solo con JavaScript en el navegador.
-   Sirve para tener un "filtro" de acceso mientras construyes el curso en
-   local, pero CUALQUIER persona que abra este archivo con el navegador
-   podría ver las contraseñas aquí escritas. No es una autenticación real.
+   Esto sigue siendo solo una comprobación hecha en JavaScript, no una
+   autenticación real de servidor. Sirve como filtro para que nadie entre
+   "por casualidad", pero alguien con conocimientos técnicos podría ver
+   este usuario y contraseña mirando el código de la página. Por eso no
+   hay datos personales aquí: si alguien llegara a verlo, solo vería el
+   usuario y contraseña genéricos, nunca información de tus alumnos.
 
-   Cuando subas la web a un servidor y quieras dar acceso de verdad a tus
-   alumnos, sustituye este sistema por uno de los siguientes:
-     - Un backend sencillo (PHP, Node, Python) que compruebe usuario y
-       contraseña en un servidor y no en el navegador.
-     - Un servicio de "miembros" ya hecho (Wix Members, Netlify Identity,
-       Firebase Authentication, Memberstack, etc.)
+   Para cambiar el usuario o la contraseña, edita los valores de aquí abajo.
    ========================================================================== */
 
 const COURSE_STUDENTS = [
-  { user: "alumno", pass: "iching2026", nombre: "Alumno de prueba" }
-
-  // Añade aquí a cada alumno real, por ejemplo:
-  // { user: "maria.garcia", pass: "clave-temporal-1", nombre: "María García" },
-  // { user: "joan.puig",    pass: "clave-temporal-2", nombre: "Joan Puig" },
+  { nombre: "Alumno/a", user: "eltao", pass: "wuwey2026@" }
 ];

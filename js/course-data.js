@@ -17,6 +17,7 @@ const COURSE_MODULES = [
     nivel: "Nivel 1 · El Camino de Fuera",
     titulo: "El Origen del Cambio",
     subtitulo: "El héroe recibe la llamada",
+    color: "#9A51FF", // violeta ligero
     hexagrama: [true, true, true, true, true, true], // Hexagrama 1 · Qian, Lo Creativo
     resumen: "Todo surge de Wu Ji. Del vacío emerge la polaridad, y de la polaridad nacen las fuerzas que dan forma al mundo.",
     temario: {
@@ -38,6 +39,7 @@ const COURSE_MODULES = [
     nivel: "Nivel 1 · El Camino de Fuera",
     titulo: "La Danza de las Fuerzas",
     subtitulo: "El héroe aprende a leer el mundo",
+    color: "#17E0FF", // cian vivido
     hexagrama: [true, false, false, true, false, false], // Hexagrama 51 · Zhen, Lo Suscitativo
     resumen: "Los acontecimientos no están aislados: son notas de una sintonía universal. Detrás de cada situación actúan fuerzas universales.",
     temario: {
@@ -59,6 +61,7 @@ const COURSE_MODULES = [
     nivel: "Nivel 2 · El Camino Interior",
     titulo: "La Rueda de los Ciclos",
     subtitulo: "El héroe desciende al mundo interior",
+    color: "#FFA500", // naranja fuerte
     hexagrama: [true, false, true, true, true, false], // Hexagrama 49 · Ge, la Revolución (mutación)
     resumen: "Todo sigue ciclos: la luz crece, la luz decrece. Todo nacimiento contiene una semilla de retorno.",
     temario: {
@@ -80,6 +83,7 @@ const COURSE_MODULES = [
     nivel: "Nivel 2 · El Camino Interior",
     titulo: "El Retorno del Sabio",
     subtitulo: "El héroe vuelve transformado",
+    color: "#51FFA8", // verde ligero
     hexagrama: [true, false, false, false, false, false], // Hexagrama 24 · Fu, El Retorno
     resumen: "Ya no intenta controlar el cambio: aprende a ser el cambio. Puede regresar al mundo, pero ese mundo ya no es el mismo.",
     temario: {

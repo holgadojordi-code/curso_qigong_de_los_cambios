@@ -28,27 +28,55 @@ la carga de archivos si simplemente haces doble-click en index.html
 2. O instala la extension "Live Server" en Visual Studio Code y pulsa
    "Go Live" con index.html abierto.
 
-ACCESO DE PRUEBA
+ACCESO DE ALUMNOS
 -----------------------
-Usuario:      alumno
-Contraseña:   iching2026
+Usuario:      eltao
+Contraseña:   wuwey2026@
 
-Para añadir a tus alumnos reales, abre js/auth-data.js y añade una linea
-por cada alumno, con su usuario y una contraseña temporal.
+Es un usuario y contraseña ÚNICOS y compartidos por todos los alumnos
+(no hay datos personales guardados en el código, a proposito, ya que
+el repositorio en GitHub es público). Compártelos solo con tus alumnos
+matriculados, por ejemplo por email o WhatsApp — evita publicar este
+enlace en redes sociales o en Google.
+
+Para cambiar el usuario o la contraseña mas adelante, edita el archivo
+js/auth-data.js y cambia los valores "user" y "pass".
+
+IMAGENES DE MARCA INCLUIDAS (carpeta img/)
+-----------------------
+sello.jpg              -> el sello rojo, usado como icono en la barra
+                           superior y en la pantalla de acceso.
+logo-rueda-blanco.jpg   -> el logo circular de los 8 trigramas, usado en
+                           la franja superior (hero).
+logo-rueda-negro.jpg    -> version en fondo negro, disponible por si la
+                           quieres usar en alguna zona oscura.
+espacio-descubrir.jpg   -> logo del espacio donde se imparte el curso,
+                           usado en el pie de pagina.
+banner-asociacion.jpg   -> banner de la Asociacion, disponible para usarlo
+                           donde quieras (por ejemplo, una pagina "Sobre
+                           el curso").
+triangulo-oro.jpg       -> el triangulo dorado suelto, por si lo quieres
+                           usar como elemento decorativo aparte.
 
 IMPORTANTE SOBRE LA SEGURIDAD DEL LOGIN
 -----------------------
-El acceso que ves ahora es solo una comprobacion hecha en el navegador
-(JavaScript). Es util como "puerta" mientras construyes el curso en local,
-pero cualquiera que abra el archivo js/auth-data.js con un editor de texto
-podria ver las contraseñas. NO es una autenticacion segura.
+El acceso actual es solo una comprobacion hecha en el navegador
+(JavaScript), con un usuario y contraseña genericos y compartidos, sin
+datos personales de alumnos. Es una solucion sencilla y suficiente para
+un grupo cerrado de alumnos: evita que alguien entre "por casualidad",
+pero alguien con conocimientos tecnicos podria ver el usuario y
+contraseña mirando el codigo de la pagina (por eso no hay datos
+personales aqui, solo esas dos palabras genericas).
 
-Cuando subas la web a un servidor de verdad y quieras dar acceso a tus
-alumnos con garantias, sustituye este sistema por uno de estos:
+Comparte el enlace de la web solo con tus alumnos (email, WhatsApp...) y
+evita que quede indexado en Google o enlazado desde sitios publicos.
+
+Si en el futuro quieres algo mas robusto (login individual por alumno,
+validado de verdad en un servidor), se puede sustituir este sistema por:
   - Un backend sencillo (PHP, Node.js, Python) que compruebe usuario y
     contraseña en el servidor, no en el navegador.
-  - Un sistema de "miembros" ya hecho: Wix Members, Netlify Identity,
-    Firebase Authentication, Memberstack, etc.
+  - Un sistema de "miembros" ya hecho: Netlify Identity, Firebase
+    Authentication, Wix Members, Memberstack, etc.
 
 AÑADIR TUS PDFs, VIDEOS Y SESIONES EN DIRECTO
 -----------------------
@@ -59,17 +87,15 @@ AÑADIR TUS PDFs, VIDEOS Y SESIONES EN DIRECTO
 3. Para la sesion en directo, pega el enlace de Zoom/Meet/YouTube Live en
    el campo streaming.url de cada modulo.
 
-CAMBIAR EL LOGO
+CAMBIAR EL LOGO O EL SELLO
 -----------------------
-Ahora mismo la marca se muestra con un sello circular y un caracter chino
-(易 / 卦), en el mismo estilo que el sello rojo de la web original. Si
-quieres poner tu logo real:
-1. Guarda tu archivo de logo (PNG o SVG) dentro de la carpeta img/,
-   por ejemplo como img/logo.png.
-2. En index.html, sustituye:
-     <div class="seal" aria-hidden="true">易</div>
-   por:
-     <img src="img/logo.png" alt="I Ching Qi Gong" style="width:44px;height:44px;border-radius:50%;">
+Ya están puestas las imagenes reales de la marca (sello.jpg y
+logo-rueda-blanco.jpg). Si mas adelante quieres cambiar cualquiera de
+las dos por otra version:
+1. Guarda tu nueva imagen dentro de la carpeta img/.
+2. En index.html, busca las etiquetas <img src="img/sello.jpg" ...> o
+   <img src="img/logo-rueda-blanco.jpg" ...> y cambia la ruta por la de
+   tu nuevo archivo.
 
 SUBIR LA WEB A UN SERVIDOR
 -----------------------

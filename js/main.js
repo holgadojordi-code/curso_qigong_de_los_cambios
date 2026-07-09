@@ -31,7 +31,7 @@ function hexagramSVG(bits){
       rows += `<rect x="${segW + gapW}" y="${yFromTop}" width="${segW}" height="${lineH}" rx="1.5" fill="currentColor"/>`;
     }
   }
-  return `<svg class="hexagram" viewBox="0 0 ${w} ${totalH}" xmlns="http://www.w3.org/2000/svg" style="color:var(--forest)">${rows}</svg>`;
+  return `<svg class="hexagram" viewBox="0 0 ${w} ${totalH}" xmlns="http://www.w3.org/2000/svg">${rows}</svg>`;
 }
 
 /* ---------------- Login ---------------- */
@@ -85,7 +85,7 @@ loginForm.addEventListener("submit", function(e){
 /* ---------------- Botones de módulo (fila horizontal) ---------------- */
 function renderModuleButtons(){
   modulesRow.innerHTML = COURSE_MODULES.map(m => `
-    <button type="button" class="module-btn" data-id="${m.id}" aria-expanded="false">
+    <button type="button" class="module-btn" data-id="${m.id}" aria-expanded="false" style="--m-color:${m.color || '#9A51FF'}">
       ${hexagramSVG(m.hexagrama)}
       <span class="m-eyebrow">Módulo ${m.numero}</span>
       <span class="m-title">${m.titulo}</span>
@@ -136,7 +136,7 @@ function renderModulePanel(){
        <li class="empty-note">El enlace de la sesión en directo se añadirá aquí antes de la clase.</li>`;
 
   modulePanel.innerHTML = `
-    <div class="module-panel">
+    <div class="module-panel" style="--m-color:${m.color || '#9A51FF'}">
       <h3>Módulo ${m.numero} · ${m.titulo}</h3>
       <p class="panel-sub">${m.subtitulo} — ${m.resumen}</p>
 
