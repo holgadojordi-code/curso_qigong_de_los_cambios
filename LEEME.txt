@@ -1,0 +1,105 @@
+PLATAFORMA DEL ALUMNO — QI GONG DE LOS CAMBIOS
+================================================
+
+ESTRUCTURA DE CARPETAS
+-----------------------
+index.html          -> la web (login + panel del alumno)
+css/style.css       -> estilos, con el mismo aire visual que iching-qigong.com
+js/course-data.js   -> contenido de los 4 modulos (edítalo para tus PDFs/videos)
+js/auth-data.js     -> usuarios y contraseñas de alumnos (modo local)
+js/main.js          -> la logica de la web (no hace falta tocarlo)
+img/                -> favicon y elementos graficos
+docs/moduloX/       -> aqui van tus archivos reales:
+    teoria/           PDF de teoria
+    practica-videos/  videos de las clases
+    streaming/        notas sobre las sesiones en directo
+    test/             test de repaso de cada modulo
+
+COMO VERLO EN LOCAL
+-----------------------
+Al ser una web con "modulos" en JavaScript, algunos navegadores bloquean
+la carga de archivos si simplemente haces doble-click en index.html
+(por seguridad, restringen el acceso a file://). Lo mas sencillo:
+
+1. Si tienes Python instalado, abre una terminal en esta carpeta y escribe:
+     python3 -m http.server 8000
+   Luego abre en el navegador: http://localhost:8000
+
+2. O instala la extension "Live Server" en Visual Studio Code y pulsa
+   "Go Live" con index.html abierto.
+
+ACCESO DE ALUMNOS
+-----------------------
+Usuario:      eltao
+Contraseña:   wuwey2026@
+
+Es un usuario y contraseña ÚNICOS y compartidos por todos los alumnos
+(no hay datos personales guardados en el código, a proposito, ya que
+el repositorio en GitHub es público). Compártelos solo con tus alumnos
+matriculados, por ejemplo por email o WhatsApp — evita publicar este
+enlace en redes sociales o en Google.
+
+Para cambiar el usuario o la contraseña mas adelante, edita el archivo
+js/auth-data.js y cambia los valores "user" y "pass".
+
+IMAGENES DE MARCA INCLUIDAS (carpeta img/)
+-----------------------
+sello.jpg              -> el sello rojo, usado como icono en la barra
+                           superior y en la pantalla de acceso.
+logo-rueda-blanco.jpg   -> el logo circular de los 8 trigramas, usado en
+                           la franja superior (hero).
+logo-rueda-negro.jpg    -> version en fondo negro, disponible por si la
+                           quieres usar en alguna zona oscura.
+espacio-descubrir.jpg   -> logo del espacio donde se imparte el curso,
+                           usado en el pie de pagina.
+banner-asociacion.jpg   -> banner de la Asociacion, disponible para usarlo
+                           donde quieras (por ejemplo, una pagina "Sobre
+                           el curso").
+triangulo-oro.jpg       -> el triangulo dorado suelto, por si lo quieres
+                           usar como elemento decorativo aparte.
+
+IMPORTANTE SOBRE LA SEGURIDAD DEL LOGIN
+-----------------------
+El acceso actual es solo una comprobacion hecha en el navegador
+(JavaScript), con un usuario y contraseña genericos y compartidos, sin
+datos personales de alumnos. Es una solucion sencilla y suficiente para
+un grupo cerrado de alumnos: evita que alguien entre "por casualidad",
+pero alguien con conocimientos tecnicos podria ver el usuario y
+contraseña mirando el codigo de la pagina (por eso no hay datos
+personales aqui, solo esas dos palabras genericas).
+
+Comparte el enlace de la web solo con tus alumnos (email, WhatsApp...) y
+evita que quede indexado en Google o enlazado desde sitios publicos.
+
+Si en el futuro quieres algo mas robusto (login individual por alumno,
+validado de verdad en un servidor), se puede sustituir este sistema por:
+  - Un backend sencillo (PHP, Node.js, Python) que compruebe usuario y
+    contraseña en el servidor, no en el navegador.
+  - Un sistema de "miembros" ya hecho: Netlify Identity, Firebase
+    Authentication, Wix Members, Memberstack, etc.
+
+AÑADIR TUS PDFs, VIDEOS Y SESIONES EN DIRECTO
+-----------------------
+1. Copia tus archivos dentro de docs/moduloX/teoria, practica-videos, test.
+2. Abre js/course-data.js y cambia las rutas "file" para que apunten a tus
+   archivos (o pega una URL de YouTube/Vimeo/Google Drive si el archivo
+   es muy pesado para guardarlo aqui).
+3. Para la sesion en directo, pega el enlace de Zoom/Meet/YouTube Live en
+   el campo streaming.url de cada modulo.
+
+CAMBIAR EL LOGO O EL SELLO
+-----------------------
+Ya están puestas las imagenes reales de la marca (sello.jpg y
+logo-rueda-blanco.jpg). Si mas adelante quieres cambiar cualquiera de
+las dos por otra version:
+1. Guarda tu nueva imagen dentro de la carpeta img/.
+2. En index.html, busca las etiquetas <img src="img/sello.jpg" ...> o
+   <img src="img/logo-rueda-blanco.jpg" ...> y cambia la ruta por la de
+   tu nuevo archivo.
+
+SUBIR LA WEB A UN SERVIDOR
+-----------------------
+Cuando quieras publicarla, sube toda esta carpeta (index.html, css/, js/,
+img/, docs/) tal cual a tu hosting. Si tu hosting no soporta un backend
+propio, servicios como Netlify o Vercel permiten anadir despues un login
+real facilmente.
