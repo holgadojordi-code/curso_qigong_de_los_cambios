@@ -1,1 +1,0 @@
-# curso_qigong_de_los_cambios
