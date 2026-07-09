@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plataforma del Alumno · Qi Gong de los Cambios</title>
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ======================= BARRA SUPERIOR ======================= -->
+<header class="top-bar">
+  <div class="brand">
+    <div class="seal-badge">
+      <img src="img/sello.jpg" alt="Sello I Ching Qi Gong">
+    </div>
+    <div class="brand-text">
+      <div class="title-en">El Qi Gong de los Cambios</div>
+      <div class="title-main">I Ching · Qi Gong</div>
+    </div>
+  </div>
+  <div class="top-bar-right" id="topBarRight">
+    <!-- se rellena por JS cuando el alumno inicia sesion -->
+  </div>
+</header>
+
+<!-- ======================= FRANJA HERO ======================= -->
+<div class="wood-band">
+  <div class="hero-logo">
+    <img src="img/logo-rueda-blanco.jpg" alt="I Ching Qi Gong">
+  </div>
+  <h1>Plataforma del Alumno</h1>
+  <p>Formación completa · Qi Gong de los Cambios</p>
+</div>
+
+<!-- ======================= PANTALLA DE ACCESO ======================= -->
+<main id="loginScreen" class="login-wrap">
+  <form class="login-card" id="loginForm" novalidate>
+    <div class="seal-badge">
+      <img src="img/sello.jpg" alt="Sello I Ching Qi Gong">
+    </div>
+    <h2>Acceso alumnos</h2>
+    <p class="sub">Reserva de plaza confirmada</p>
+
+    <div class="field">
+      <label for="loginUser">Usuario</label>
+      <input type="text" id="loginUser" autocomplete="username" required>
+    </div>
+    <div class="field">
+      <label for="loginPass">Contraseña</label>
+      <input type="password" id="loginPass" autocomplete="current-password" required>
+    </div>
+
+    <button type="submit" class="btn-primary">Entrar</button>
+    <p class="login-error" id="loginError" role="alert"></p>
+  </form>
+</main>
+
+<!-- ======================= PANEL DEL ALUMNO ======================= -->
+<div id="dashboard" class="dashboard hidden">
+
+  <div class="dashboard-intro">
+    <h2>Qi Gong de los Cambios</h2>
+    <p>Un viaje iniciático a través de las fuerzas y los ciclos de la transformación</p>
+  </div>
+
+  <!-- Fila horizontal con los 4 botones de modulo -->
+  <nav class="modules-row" id="modulesRow" aria-label="Módulos del curso"></nav>
+
+  <!-- Aqui se pinta el contenido del modulo seleccionado -->
+  <section id="modulePanel"></section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-venue">
+    <img src="img/espacio-descubrir.jpg" alt="Espacio Descubrir">
+  </div>
+  <strong>IChing-QiGong</strong> · Helena Amando · Asociación IChing-QiGong<br>
+  Este espacio es de uso exclusivo para alumnos matriculados en la Formación Qi Gong de los Cambios.
+</footer>
+
+<script src="js/course-data.js"></script>
+<script src="js/auth-data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,413 @@
+/* =========================================================
+   QI GONG DE LOS CAMBIOS — Plataforma del alumno
+   Paleta oficial de la marca (paleta_de_colores_Amando_Lavida)
+   ========================================================= */
+
+:root{
+  --violeta:      #9A51FF;   /* violeta ligero — color de marca principal */
+  --violeta-dark: #7a2fe0;
+  --amarillo:     #FFE051;   /* amarillo / naranja brillante */
+  --naranja:      #FFA500;   /* naranja fuerte */
+  --cian:         #17E0FF;   /* cian vivido */
+  --verde:        #51FFA8;   /* verde ligero */
+  --tao-red:      #FB5732;   /* rojo-naranja, letras del Tao */
+  --gold:         #A98F38;   /* fondo oro */
+  --gold-light:   #DEBC42;   /* aerosol dorado */
+
+  --bg:           #FBF8FF;   /* fondo general, violeta muy diluido */
+  --paper:        #FFFFFF;
+  --panel-tint:   #F5F0FF;
+
+  --ink:          #2B2733;
+  --ink-soft:     #6a6476;
+
+  --font-display: 'Familjen Grotesk', 'Poppins', sans-serif;
+  --font-script:  'Familjen Grotesk', 'Poppins', sans-serif;
+  --font-body:    'Poppins', 'Segoe UI', sans-serif;
+
+  --radius:     14px;   /* mas redondeado, a peticion */
+  --radius-sm:  10px;
+  --radius-pill: 999px;
+  --shadow: 0 8px 22px rgba(122, 47, 224, 0.14);
+}
+
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--bg);
+  min-height: 100vh;
+}
+img{ max-width:100%; display:block; }
+a{ color: var(--violeta-dark); }
+button{ font-family: inherit; cursor:pointer; }
+.hidden{ display:none !important; }
+
+/* ---------- Barra superior ---------- */
+.top-bar{
+  background: var(--paper);
+  border-bottom: 3px solid var(--violeta);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 10px 28px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.brand .seal-badge{
+  width:46px; height:46px;
+  border-radius: var(--radius-sm);
+  overflow:hidden;
+  border: 2px solid var(--tao-red);
+  flex-shrink:0;
+  background:#fff;
+}
+.brand .seal-badge img{ width:100%; height:100%; object-fit:cover; }
+.brand-text .title-en{
+  font-family: var(--font-script);
+  color: var(--violeta-dark);
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  line-height:1;
+}
+.brand-text .title-main{
+  font-family: var(--font-display);
+  font-weight:600;
+  font-size: 1.35rem;
+  color: var(--ink);
+  line-height:1.15;
+}
+.top-bar-right{
+  display:flex; align-items:center; gap:14px; font-size:0.92rem;
+}
+.top-bar-right .user-name{ color: var(--ink-soft); }
+.btn-link{
+  background:none; border:none; color:var(--violeta-dark);
+  text-decoration:underline; font-size:0.92rem; padding:4px;
+  border-radius: var(--radius-sm);
+}
+
+/* ---------- Franja hero ---------- */
+.wood-band{
+  background: linear-gradient(135deg, #1FBE7A 0%, #29D98C 55%, #51FFA8 100%);
+  color: var(--ink);
+  padding: 30px 28px 34px;
+  text-align:center;
+  position:relative;
+}
+.wood-band .hero-logo{
+  width: 92px; height: 92px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  overflow:hidden;
+  border: 3px solid var(--gold-light);
+  background:#fff;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+.wood-band .hero-logo img{ width:100%; height:100%; object-fit:cover; }
+.wood-band h1{
+  font-family: var(--font-display);
+  font-weight:600;
+  margin:0 0 6px;
+  font-size: 2rem;
+  letter-spacing:0.5px;
+}
+.wood-band p{
+  margin:0;
+  font-family: var(--font-script);
+  color: var(--violeta-dark);
+  font-size:1.05rem;
+  font-weight:700;
+}
+
+/* ---------- Login ---------- */
+.login-wrap{
+  min-height: calc(100vh - 0px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 40px 20px;
+}
+.login-card{
+  background: var(--paper);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  padding: 36px 34px;
+  max-width: 380px;
+  width:100%;
+  text-align:center;
+  border-top: 5px solid var(--violeta);
+}
+.login-card .seal-badge{
+  width:60px; height:60px; margin:0 auto 14px;
+  border-radius: var(--radius-sm);
+  overflow:hidden;
+  border: 2px solid var(--tao-red);
+}
+.login-card .seal-badge img{ width:100%; height:100%; object-fit:cover; }
+.login-card h2{
+  font-family: var(--font-display);
+  margin: 0 0 4px;
+  color: var(--ink);
+}
+.login-card .sub{
+  font-family: var(--font-script);
+  color: var(--violeta-dark);
+  margin: 0 0 22px;
+}
+.field{
+  text-align:left;
+  margin-bottom:14px;
+}
+.field label{
+  display:block;
+  font-size:0.82rem;
+  color: var(--ink-soft);
+  margin-bottom:4px;
+}
+.field input{
+  width:100%;
+  padding:11px 14px;
+  border:1px solid #dcd3ea;
+  border-radius: var(--radius-sm);
+  font-size:0.95rem;
+  background: var(--panel-tint);
+}
+.field input:focus{
+  outline: 2px solid var(--cian);
+  outline-offset:1px;
+}
+.btn-primary{
+  width:100%;
+  background: var(--violeta);
+  color:#fff;
+  border:none;
+  padding: 12px 18px;
+  border-radius: var(--radius-pill);
+  font-size:1rem;
+  font-weight:700;
+  letter-spacing:0.3px;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.btn-primary:hover{ background: var(--violeta-dark); transform: translateY(-1px); }
+.btn-primary:focus-visible{ outline:3px solid var(--cian); outline-offset:2px; }
+.login-error{
+  color: var(--tao-red);
+  font-size:0.85rem;
+  min-height:1.2em;
+  margin-top:10px;
+  font-weight:600;
+}
+.login-hint{
+  margin-top:18px;
+  font-size:0.78rem;
+  color: var(--ink-soft);
+  background: var(--panel-tint);
+  border-radius: var(--radius-sm);
+  padding:10px 12px;
+  text-align:left;
+  line-height:1.5;
+}
+
+/* ---------- Dashboard ---------- */
+.dashboard{
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 30px 20px 50px;
+}
+.dashboard-intro{
+  text-align:center;
+  margin-bottom: 30px;
+}
+.dashboard-intro h2{
+  font-family: var(--font-display);
+  font-size:1.7rem;
+  margin:0 0 6px;
+  color: var(--ink);
+}
+.dashboard-intro p{
+  font-family: var(--font-script);
+  color: var(--violeta-dark);
+  margin:0;
+  font-size:1.05rem;
+}
+
+/* Fila horizontal de 4 botones de modulo */
+.modules-row{
+  display:flex;
+  gap:16px;
+  flex-wrap: wrap;
+  justify-content:center;
+  margin-bottom: 28px;
+}
+.module-btn{
+  flex: 1 1 220px;
+  max-width: 250px;
+  background: var(--paper);
+  border: 2px solid transparent;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 20px 16px 18px;
+  text-align:center;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  border-top: 5px solid var(--m-color, var(--violeta));
+}
+.module-btn:hover{ transform: translateY(-3px); box-shadow: 0 12px 26px rgba(122,47,224,0.18); }
+.module-btn:focus-visible{ outline:3px solid var(--cian); outline-offset:2px; }
+.module-btn.active{
+  border-color: var(--m-color, var(--violeta));
+  background: var(--panel-tint);
+}
+.module-btn .hexagram{
+  width: 46px;
+  margin: 0 auto 10px;
+  display:block;
+  color: var(--m-color, var(--violeta));
+}
+.module-btn .m-eyebrow{
+  display:block;
+  font-size:0.72rem;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color: var(--gold);
+  font-weight:700;
+  margin-bottom:2px;
+}
+.module-btn .m-title{
+  display:block;
+  font-family: var(--font-display);
+  font-weight:600;
+  font-size:1.05rem;
+  color: var(--ink);
+  line-height:1.2;
+}
+.module-btn .m-nivel{
+  display:block;
+  font-size:0.75rem;
+  color: var(--ink-soft);
+  margin-top:4px;
+}
+
+/* Panel de contenido del modulo */
+.module-panel{
+  background: var(--paper);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 26px 28px 30px;
+  border-left: 6px solid var(--m-color, var(--violeta));
+  animation: reveal 0.25s ease;
+}
+@keyframes reveal{
+  from{ opacity:0; transform: translateY(6px); }
+  to{ opacity:1; transform: translateY(0); }
+}
+.module-panel h3{
+  font-family: var(--font-display);
+  color: var(--ink);
+  font-size:1.4rem;
+  margin: 0 0 2px;
+}
+.module-panel .panel-sub{
+  font-family: var(--font-script);
+  color: var(--violeta-dark);
+  margin: 0 0 20px;
+}
+
+.content-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+.content-card{
+  background: var(--panel-tint);
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid #e6dcf5;
+}
+.content-card h4{
+  margin:0 0 10px;
+  font-size:0.95rem;
+  color: var(--violeta-dark);
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.content-card ul{
+  list-style:none;
+  margin:0; padding:0;
+  display:flex; flex-direction:column; gap:8px;
+}
+.content-card li a, .content-card li .stream-link{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:0.88rem;
+  padding: 8px 12px;
+  background: var(--paper);
+  border-radius: var(--radius-sm);
+  text-decoration:none;
+  color: var(--ink);
+  border: 1px solid #e6dcf5;
+  transition: border-color .15s ease, transform .15s ease;
+}
+.content-card li a:hover, .content-card li .stream-link:hover{
+  border-color: var(--cian);
+  transform: translateX(2px);
+}
+.tag{
+  font-size:0.68rem;
+  font-weight:700;
+  padding:3px 8px;
+  border-radius: var(--radius-pill);
+  text-transform:uppercase;
+  letter-spacing:0.4px;
+}
+.tag.pdf{ background:#ffe3db; color:#c2431f; }
+.tag.video{ background:#ddfaea; color:#0f8a52; }
+.tag.live{ background:#fff2cf; color:#8a6416; }
+.tag.test{ background:#e3f8ff; color:#0a7fa0; }
+
+.empty-note{
+  font-size:0.82rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+/* ---------- Pie ---------- */
+.site-footer{
+  text-align:center;
+  padding: 10px 20px 40px;
+  font-size:0.8rem;
+  color: var(--ink-soft);
+}
+.site-footer strong{ color: var(--violeta-dark); }
+.footer-venue{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin: 6px auto 14px;
+}
+.footer-venue img{
+  height: 150px;
+  width:auto;
+  border-radius: 10px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px){
+  .top-bar{ flex-direction:column; align-items:flex-start; }
+  .modules-row{ flex-direction:column; align-items:stretch; }
+  .module-btn{ max-width:none; }
+  .wood-band h1{ font-size:1.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .module-btn, .module-panel{ animation:none; transition:none; }
+}
