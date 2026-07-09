@@ -21,9 +21,9 @@
   --ink:          #2B2733;
   --ink-soft:     #6a6476;
 
-  --font-display: 'Cormorant Garamond', 'Noto Serif', serif;
-  --font-script:  'Yuji Syuku', 'Cormorant Garamond', serif;
-  --font-body:    'Karla', 'Segoe UI', sans-serif;
+  --font-display: 'Baloo 2', 'Quicksand', sans-serif;
+  --font-script:  'Baloo 2', 'Quicksand', sans-serif;
+  --font-body:    'Quicksand', 'Segoe UI', sans-serif;
 
   --radius:     14px;   /* mas redondeado, a peticion */
   --radius-sm:  10px;
@@ -95,8 +95,8 @@ button{ font-family: inherit; cursor:pointer; }
 
 /* ---------- Franja hero ---------- */
 .wood-band{
-  background: linear-gradient(135deg, var(--violeta) 0%, #6f2fd6 55%, #4a1f9c 100%);
-  color: var(--paper);
+  background: linear-gradient(135deg, #1FBE7A 0%, #29D98C 55%, #51FFA8 100%);
+  color: var(--ink);
   padding: 30px 28px 34px;
   text-align:center;
   position:relative;
@@ -121,8 +121,9 @@ button{ font-family: inherit; cursor:pointer; }
 .wood-band p{
   margin:0;
   font-family: var(--font-script);
-  color: var(--amarillo);
+  color: var(--violeta-dark);
   font-size:1.05rem;
+  font-weight:700;
 }
 
 /* ---------- Login ---------- */
@@ -394,9 +395,9 @@ button{ font-family: inherit; cursor:pointer; }
   margin: 6px auto 14px;
 }
 .footer-venue img{
-  height: 30px;
+  height: 150px;
   width:auto;
-  border-radius: 6px;
+  border-radius: 10px;
 }
 
 /* ---------- Responsive ---------- */
